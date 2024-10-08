@@ -1,0 +1,35 @@
+[gd_scene load_steps=10 format=3 uid="uid://v22lw8iv8uuy"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_jngtn"]
+[ext_resource type="PackedScene" uid="uid://uj6xkklvqk8p" path="res://scenes/exit.tscn" id="2_72kkn"]
+[ext_resource type="PackedScene" uid="uid://b552wqu7fsyqp" path="res://scenes/level_3.tscn" id="2_82a1q"]
+[ext_resource type="PackedScene" uid="uid://wih7bpgxt4gb" path="res://scenes/start.tscn" id="3_fmtbc"]
+[ext_resource type="PackedScene" uid="uid://xruqmv8hnxxg" path="res://scenes/tile_map.tscn" id="4_oc3ru"]
+[ext_resource type="PackedScene" uid="uid://dqkg4buqgni5t" path="res://scenes/death_zone.tscn" id="5_8fidd"]
+[ext_resource type="PackedScene" uid="uid://dlusr0nthdayb" path="res://scenes/player.tscn" id="6_ax3jc"]
+[ext_resource type="PackedScene" uid="uid://bcar1p50etny6" path="res://scenes/bg.tscn" id="7_63ixp"]
+[ext_resource type="PackedScene" uid="uid://bsl385krcsaiq" path="res://scenes/ui_layer.tscn" id="9_vxasv"]
+
+[node name="Level2" type="Node2D"]
+position = Vector2(31, -2)
+script = ExtResource("1_jngtn")
+next_level = ExtResource("2_82a1q")
+
+[node name="Exit" parent="." instance=ExtResource("2_72kkn")]
+position = Vector2(225, 194)
+
+[node name="Start" parent="." instance=ExtResource("3_fmtbc")]
+position = Vector2(18, 223)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("4_oc3ru")]
+position = Vector2(-31, 0)
+
+[node name="DeathZone" parent="." instance=ExtResource("5_8fidd")]
+position = Vector2(-12, 56)
+
+[node name="Player" parent="." instance=ExtResource("6_ax3jc")]
+position = Vector2(26, 160)
+
+[node name="BG" parent="." instance=ExtResource("7_63ixp")]
+
+[node name="UILayer" parent="." instance=ExtResource("9_vxasv")]
